@@ -1,19 +1,30 @@
 .form-wrapper{
-    width: 100%;
-    top:200px;
+  width: 100%;
+  display: flex;
+  background-color:#90caf9;
+  opacity: 0.8;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.form-class{
+    /* border: 1px solid black; */
+    margin-top: 20px;
     display: flex;
-    background-color:#90caf9;
-   opacity: 0.8;
-   flex-wrap: wrap;
-   justify-content: center;
-    align-items: center;
+    flex-direction: row;
+}
+.form-sub{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
 }
 input.title[type=text]{
-    border:2px solid #aaa;
-    border-radius: 4px;
-    outline: none;
-    padding: 5px;
+   border:2px solid #aaa;
+   border-radius: 4px;
+   outline: none;
+   padding: 5px;
     box-sizing: border-box;
+
 }
 input.description[type=text]{
     border:2px solid #aaa;
@@ -27,3 +38,26 @@ input[type=text]:focus{
     box-shadow: 0 0 0px dodgerblue;
 }
 
+.btn
+{
+  display: block;
+  margin: 40px 0;
+  width: 160px;
+  height: 60px;
+  border: none;
+  background-color:  #00a8ff;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  transition: .3s linear;
+
+}
+.btn2:hover {
+ transform: rotateX(-15deg); 
+ box-shadow: 0 -8px 15px #00a8ff;
+  }
+label{
+color:red;
+}

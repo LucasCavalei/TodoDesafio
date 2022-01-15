@@ -10,8 +10,8 @@ const App = () => {
  
   useEffect(()=>{
     axios.get("/todos").then(res=>
-       setTodos(res.data))
-     },[todos])
+    setTodos(res.data))
+  },[])
 
     return (
       <div className="App">

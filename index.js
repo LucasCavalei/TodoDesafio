@@ -18,7 +18,7 @@ app.use(express.json());
 require('dotenv').config();
 
 
-mongoose.connect("",{
+mongoose.connect("mongodb+srv://LucasBanco:12065722@cluster0.kuddv.mongodb.net/oneSigntPro?authSource=admin&replicaSet=atlas-q4t055-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true",{
     useNewUrlParser:true,
     useUnifiedTopology: true
 }) 

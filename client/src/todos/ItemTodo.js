@@ -17,13 +17,13 @@ export const ItemTodo = ({todo}) => {
      axios.put(`/todos/${todo._id}`,updatedTodo)
        .then(res=>{
        }).catch(err=>console.log(err));
-    }
+      }
                
      const deleteNote = () => {
        axios.delete(`/todos/${todo._id}`)
-        .then(res=>{
+        .then(res=>{ console.log(res.data);
         }).catch(err=>console.log(err))
-     }
+      }
     return (
         <>
          {!onUpdate ?(

@@ -17,20 +17,22 @@ const  Form = ({getData}) => {
      axios.post("/todos",newTodo).then(res=>{
         console.log(res.data);
         }).catch(err =>console.log(err));
-        }
+      }
        
-          return (
-        <div className="form-wrapper">
-          <form className="form-class">
-            <h2>titulo</h2>
-            <input class="title" type="text" name="title" onChange={e => setTitle(e.target.value)} />
-            <h2>descricao</h2>
+        return (
+    <div className = "form-wrapper">
+       <form className="form-class">
+         <div className='form-sub'>
+           <label>titulo</label>
+           <input class="title" type="text" name="title" onChange={e => setTitle(e.target.value)} />
+           </div>
+           <div className='form-sub'>
+            <label>descrição</label>
             <input class="description" type="text" name="description" onChange={e => setDescription(e.target.value)} />
-            <button  type="submit" onClick={()=> createNote()}>Adicinar nota</button>
-            
-            {/* {console.log("sou o form", title,description)} */}
-          </form>
-        </div>
+            </div>
+          <button  type="submit" className="btn btn2" onClick={()=> createNote()}>Adicinar nota</button>
+       </form>
+    </div>
     )
 }
 export default Form;

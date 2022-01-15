@@ -10,7 +10,7 @@ const Todo = require("../models/todos");
 router.get("/", async(req, res)=>{
     try {
         const lists = await Todo.find({});
-        res.send(lists);
+        res.json(lists);
     } catch (err) {
         // linha feia
         res.send("Error").status(400);
