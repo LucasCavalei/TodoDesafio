@@ -30,7 +30,7 @@ const  Form = ({getData}) => {
             <label>descrição</label>
             <input class="description" type="text" name="description" onChange={e => setDescription(e.target.value)} />
             </div>
-          <button  type="submit" className="btn btn2" onClick={()=> createNote()}>Adicinar nota</button>
+          <button type="submit" className="btn btn2" onClick={()=> createNote()}>Adicinar nota</button>
        </form>
     </div>
     )
