@@ -42,7 +42,6 @@ const ItemTodo = ({ todo }) => {
           />
           <FiEdit3
             className="icon edit"
-=======
   const deleteNote = () => {
     axios
       .delete(`/todos/${todo._id}`)
