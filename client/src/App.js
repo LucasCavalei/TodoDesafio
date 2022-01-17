@@ -9,6 +9,7 @@ import "./todos/todo.css";
 const App = () => {
   const [todos, setTodos] = useState([]);
 
+<<<<<<< HEAD
   useEffect(() => {
     getTodos();
   }, []);
@@ -37,6 +38,16 @@ const App = () => {
         setTodos(deletedTodos);
       })
       .catch((err) => console.log(err));
+=======
+  // useEffect(()=>{
+  //   axios.get("/todos").then(res=>
+  //   setTodos(res.data))
+  // },[])
+
+  const addTodo = async (newTodo) => {
+    const response = await axios.post("/todos", { newTodo });
+    setTodos(response.data).catch((err) => console.log(err));
+>>>>>>> 56f9e881f33dd1a2447184568f8c3ab94a91a5c7
   };
   return (
     <div className="App">
@@ -44,8 +55,13 @@ const App = () => {
       <div className="list-wrapper">
         <Form addTodo={addTodo} />
         <div className="todolist">
+<<<<<<< HEAD
           {todos.map((todo, index) => (
             <ItemTodo key={index} todo={todo} deleteTodo={deleteTodo} />
+=======
+          {todos.map((todo) => (
+            <ItemTodo key={todo._id} todo={todo} />
+>>>>>>> 56f9e881f33dd1a2447184568f8c3ab94a91a5c7
           ))}
         </div>
       </div>
