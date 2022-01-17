@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { BiBookAdd } from "react-icons/bi";
 import { FiEdit3 } from "react-icons/fi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 import "./todo.css";
 
-const ItemTodo = ({ todo }) => {
+const ItemTodo = ({ todo, deleteTodo }) => {
   const [onUpdate, setOnUpdate] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -22,28 +21,18 @@ const ItemTodo = ({ todo }) => {
       .catch((err) => console.log(err));
   };
 
-  const deleteNote = () => {
-    axios
-      .delete(`/todos/${todo._id}`)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
-  };
   return (
     <>
       {!onUpdate ? (
-        <div className="item-todo">
+        <div className="item-todo" key={todo.id}>
           <h4>{todo.title}</h4>
           <h4>{todo.description}</h4>
           <RiDeleteBin5Line
-            className="delete-icon"
-            style={{ color: "white" }}
-            onClick={() => deleteNote()}
+            className="icon delete"
+            onClick={() => deleteTodo(todo._id)}
           />
           <FiEdit3
-            className="edit-icon"
-            style={{ color: "white", marginLeft: "30px" }}
+            className="icon edit"
             onClick={() => setOnUpdate(!onUpdate)}
           />
         </div>
@@ -62,11 +51,11 @@ const ItemTodo = ({ todo }) => {
             onChange={(e) => setDescription(e.target.value)}
           />
           <RiDeleteBin5Line
-            className="delete-icon"
+            className="icon delete"
             onClick={() => editSend()}
           />
           <FiEdit3
-            className="edit-icon"
+            className="icon edit"
             onClick={() => setOnUpdate(!onUpdate)}
           />
         </div>
