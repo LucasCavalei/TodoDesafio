@@ -1,56 +1,31 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
-
-.todolist {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  background-color: #90caf9;
-  padding: 10px;
-  width: 55em;
-  margin-bottom: 25px;
-  border: 1px solid whitesmoke;
-  gap: 20px;
-  font-family: "Montserrat", sans-serif;
-}
-@media (max-width: 880px) {
-  .todolist {
-    grid-template-columns: 1fr 1fr;
-    border: 10px solid brown;
-  }
+.todolist{
+ display: grid;
+ grid-template-columns: auto auto auto;
+ background-color:#90caf9;
+ padding: 10px;
+width: 50em;
+margin-bottom: 25px;
+border: 1px solid whitesmoke;
+gap:20px
 }
 
-.item-todo {
-  color: #282e29;
-  /* justify-items: auto; */
-  min-width: 230px;
-  background-color: #4dabf8;
-  font-family: "Roboto", sans-serif;
-  padding: 20px;
-  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
-    rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
-    rgba(156, 29, 110, 0.2) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
-  border-radius: 10px;
-  /* text-align: center; */
-  text-align: left;
+.item-todo{
+    color: #282e29;
+justify-items: auto;
+background-color:#4dabf8;
+padding: 20px;
+border-radius: 10px;
+text-align: center;
 }
-/* .item-todo.h4 {
-  box-shadow: 0 0 0 2em #f4aab9;
-} */
-.item-edit {
-  justify-items: auto;
-  background-color: greenyellow;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  padding: 5px;
-  text-align: center;
+
+.item-edit{
+justify-items: auto;
+background-color: greenyellow;
+border: 1px solid rgba(0, 0, 0, 0.8);
+border-radius: 10px;
+padding: 5px;
+text-align: center;
 }
-.list-wrapper {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.icon {
-  color: white;
-  margin-left: 30px;
-  cursor: pointer;
+.list-wrapper{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
