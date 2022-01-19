@@ -22,7 +22,7 @@ router.post("/", async(req, res)=>{
     const {title, description} = req.body;
     try{
         const todo = await Todo.create({title, description});
-        res.json({message:"deu certo", todo});
+        res.json(todo);
     }catch(error){
         res.status(400).send({error: "falha ao cadastrar"})
     }

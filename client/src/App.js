@@ -9,56 +9,30 @@ import "./todos/todo.css";
 const App = () => {
   const [todos, setTodos] = useState([]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   useEffect(() => {
     getTodos();
-  }, []);
+  }, [todos]);
 
   const getTodos = () => {
     axios
       .get("/todos")
-      .then((res) => setTodos(res.data))
+      .then((res) => {
+        setTodos(res.data);
+      })
       .catch((err) => console.log(err));
   };
 
-  const addTodo = ({ title, description }) => {
-    axios
-      .post("/todos", { title, description })
-      .then((res) => setTodos([...todos, res.data]))
-      .catch((err) => console.log(`err`, err));
-    // const response = await axios.post("/todos", title, description);
+  const addTodo = async (newTodo) => {
+    const response = await axios.post("/todos", { newTodo });
+    setTodos(response.data).catch((err) => console.log(err));
   };
-
-  const deleteTodo = (id) => {
+  const deleteNote = (id) => {
     axios
       .delete(`/todos/${id}`)
       .then((res) => {
-        // todos: [...todos.filter((todo) => todo._id !== todo._id)])
-        const deletedTodos = todos.filter((res) => res._id !== id);
-        setTodos(deletedTodos);
+        console.log(res.data);
       })
       .catch((err) => console.log(err));
-=======
-  // useEffect(()=>{
-  //   axios.get("/todos").then(res=>
-  //   setTodos(res.data))
-  // },[])
-
-  const addTodo = async (newTodo) => {
-    const response = await axios.post("/todos", { newTodo });
-    setTodos(response.data).catch((err) => console.log(err));
->>>>>>> 56f9e881f33dd1a2447184568f8c3ab94a91a5c7
-=======
-  // useEffect(()=>{
-  //   axios.get("/todos").then(res=>
-  //   setTodos(res.data))
-  // },[])
-
-  const addTodo = async (newTodo) => {
-    const response = await axios.post("/todos", { newTodo });
-    setTodos(response.data).catch((err) => console.log(err));
->>>>>>> parent of c4ceac3 (Adionada items box-shaodow e grid template)
   };
   return (
     <div className="App">
@@ -66,18 +40,8 @@ const App = () => {
       <div className="list-wrapper">
         <Form addTodo={addTodo} />
         <div className="todolist">
-<<<<<<< HEAD
-<<<<<<< HEAD
           {todos.map((todo, index) => (
-            <ItemTodo key={index} todo={todo} deleteTodo={deleteTodo} />
-=======
-          {todos.map((todo) => (
-            <ItemTodo key={todo._id} todo={todo} />
->>>>>>> 56f9e881f33dd1a2447184568f8c3ab94a91a5c7
-=======
-          {todos.map((todo) => (
-            <ItemTodo key={todo._id} todo={todo} />
->>>>>>> parent of c4ceac3 (Adionada items box-shaodow e grid template)
+            <ItemTodo key={index} todo={todo} deleteNote={deleteNote} />
           ))}
         </div>
       </div>
