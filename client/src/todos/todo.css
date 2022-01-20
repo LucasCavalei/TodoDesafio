@@ -2,36 +2,33 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
-
   background-color: #90caf9;
   padding: 20px;
-  width: 50em;
-  margin-bottom: 25px;
+  margin: 25px;
   border: 1px solid whitesmoke;
   gap: 20px;
 }
 
 .item-todo {
   color: #282e29;
-  justify-items: auto;
   background-color: #4dabf8;
-  padding: 20px;
   border-radius: 10px;
   text-align: center;
+  width: 320px;
+  max-width: 320px;
+  height: 180px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .todolist {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 676px) {
   .todolist {
     grid-template-columns: repeat(1, 1fr);
-    margin: 10px;
   }
 }
-
 .item-edit {
   justify-items: auto;
   background-color: greenyellow;
@@ -44,4 +41,7 @@
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.icons {
+  cursor: pointer;
 }
