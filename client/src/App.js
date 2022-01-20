@@ -30,20 +30,18 @@ const App = () => {
     axios
       .delete(`/todos/${id}`)
       .then((res) => {
-        console.log(res.data);
+        setTodos(todos.filter((todo) => todo._id !== id));
       })
       .catch((err) => console.log(err));
   };
   return (
     <div className="App">
       <Header />
-      <div className="list-wrapper">
-        <Form addTodo={addTodo} />
-        <div className="todolist">
-          {todos.map((todo, index) => (
-            <ItemTodo key={index} todo={todo} deleteNote={deleteNote} />
-          ))}
-        </div>
+      <Form addTodo={addTodo} />
+      <div className="todolist">
+        {todos.map((todo, index) => (
+          <ItemTodo key={index} todo={todo} deleteNote={deleteNote} />
+        ))}
       </div>
     </div>
   );
