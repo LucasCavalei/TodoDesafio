@@ -8,23 +8,17 @@
   align-items: center;
 }
 .form-class {
-  /* border: 1px solid black; */
+  border: 1px solid black;
   margin-top: 20px;
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
+  width: 40%;
 }
-.form-sub {
-  /* border: 1px solid red; */
-  display: flex;
-  flex-direction: column;
-}
-input.title[type="text"] {
-  border: 2px solid #aaa;
+.select {
   border-radius: 4px;
   outline: none;
-  padding: 5px;
+  padding: 1px;
   box-sizing: border-box;
 }
 input.description[type="text"] {
