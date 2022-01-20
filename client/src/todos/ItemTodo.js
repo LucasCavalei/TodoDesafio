@@ -27,12 +27,12 @@ const ItemTodo = ({ todo, deleteNote }) => {
           <h4>{todo.title}</h4>
           <h4>{todo.description}</h4>
           <RiDeleteBin5Line
-            className="delete-icon"
+            className="icon delete"
             style={{ color: "white" }}
             onClick={() => deleteNote(todo._id)}
           />
           <FiEdit3
-            className="edit-icon"
+            className="icon edit"
             style={{ color: "white", marginLeft: "30px" }}
             onClick={() => setOnUpdate(!onUpdate)}
           />
