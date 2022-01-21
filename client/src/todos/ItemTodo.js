@@ -5,21 +5,15 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 
 import "./todo.css";
 
-const ItemTodo = ({ todo, deleteNote }) => {
+const ItemTodo = ({ todo, deleteNote, editTodo }) => {
   const [onUpdate, setOnUpdate] = useState(false);
   const [dia, setDia] = useState();
   const [description, setDescription] = useState("");
 
-  const editSend = () => {
-    const updatedTodo = {
-      dia,
-      description,
-    };
-    axios
-      .put(`/todos/${todo._id}`, updatedTodo)
-      .then((res) => {})
-      .catch((err) => console.log(err));
-  };
+  function callEditTodo(id) {
+    editTodo({ dia, description, id });
+  }
+
   return (
     <>
       {!onUpdate ? (
@@ -54,7 +48,7 @@ const ItemTodo = ({ todo, deleteNote }) => {
           <FiEdit3
             className="icon edit"
             className="delete-icon"
-            onClick={() => editSend()}
+            onClick={() => callEditTodo(todo._id)}
           />
           <button className="edit-icon" onClick={() => setOnUpdate(!onUpdate)}>
             Cancelar update

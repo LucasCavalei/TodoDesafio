@@ -39,13 +39,36 @@ const App = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  const editTodo = ({ id, dia, description }) => {
+    const updatedTodo = {
+      dia,
+      description,
+    };
+    axios
+      .put(`/todos/${id}`, updatedTodo)
+      .then((res) => {
+        setTodos(
+          todos.map((todo) =>
+            todo._id === id ? { ...todo, dia, description } : todo
+          )
+        );
+      })
+      .catch((err) => console.log("sou errr do upalod", err));
+  };
+
   return (
     <div className="App">
       <Header />
       <Form addTodo={addTodo} />
       <div className="todolist">
         {todos.map((todo, index) => (
-          <ItemTodo key={index} todo={todo} deleteNote={deleteNote} />
+          <ItemTodo
+            key={index}
+            todo={todo}
+            deleteNote={deleteNote}
+            editTodo={editTodo}
+          />
         ))}
       </div>
     </div>

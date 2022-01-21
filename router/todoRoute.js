@@ -29,19 +29,18 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+  let id = req.params.id;
+
   try {
-    const oldlist = await Todo.findByIdAndUpdate(req.params.id, {
+    const oldlist = await Todo.findByIdAndUpdate(id, {
       $set: req.body,
     });
     res.json(oldlist);
-    {
-      console.log(res);
-    }
   } catch (err) {
     res.send({ message: "Nao encontrado", err }).status(404);
+    console.log(err);
   }
 });
-// let id = req.params.id;
 // Todo.findById(id, (err, todo) => {
 //     res.json(todo);
 // });
