@@ -7,12 +7,12 @@ import "./todo.css";
 
 const ItemTodo = ({ todo, deleteNote }) => {
   const [onUpdate, setOnUpdate] = useState(false);
-  const [date, setDate] = useState("");
+  const [dia, setDia] = useState();
   const [description, setDescription] = useState("");
 
   const editSend = () => {
     const updatedTodo = {
-      date,
+      dia,
       description,
     };
     axios
@@ -24,7 +24,7 @@ const ItemTodo = ({ todo, deleteNote }) => {
     <>
       {!onUpdate ? (
         <div className="item-todo">
-          <h4>{todo.date}</h4>
+          <h5>{todo.dia}</h5>
           <h4>{todo.description}</h4>
           <RiDeleteBin5Line
             className="icon delete"
@@ -43,7 +43,7 @@ const ItemTodo = ({ todo, deleteNote }) => {
           <input
             type="text"
             name="title"
-            onChange={(e) => setDate(e.target.value)}
+            onChange={(e) => setDia(e.target.value)}
           />
           <h5>descricao</h5>
           <input

@@ -1,34 +1,22 @@
-import axios from "axios";
 import React, { useState } from "react";
 import "./form.css";
 
-const Form = ({ getData }) => {
-  const [date, setDate] = useState();
+const Form = ({ getData, addTodo }) => {
+  const [dia, setDia] = useState("");
   const [description, setDescription] = useState("");
 
   const createNote = () => {
-    const newTodo = {
-      date,
-      description,
-    };
-
-    axios
-      .post("/todos", newTodo)
-      .then((res) => {
-        console.log("resoinsa axios do backend", res.data);
-      })
-      .catch((err) => console.log(err));
+    addTodo({ dia, description });
   };
 
   return (
     <form className="form-class">
+      <h2>{dia}</h2>
       <label>Dia da semana</label>
-      <h2>{date}</h2>
       <select
-        value={date}
-        type="select"
+        value={dia}
+        onChange={(e) => setDia(e.target.value)}
         className="select"
-        onChange={(e) => setDate(e.target.value)}
       >
         <option value="segunda">Segunda</option>
         <option value="terca">Terça</option>
@@ -42,7 +30,7 @@ const Form = ({ getData }) => {
       <input
         className="description"
         type="text"
-        name="date"
+        name="description"
         onChange={(e) => setDescription(e.target.value)}
       />
       <button type="button" className="btn btn2" onClick={() => createNote()}>

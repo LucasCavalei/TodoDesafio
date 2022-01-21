@@ -22,10 +22,15 @@ const App = () => {
       .catch((err) => console.log(err));
   };
 
-  const addTodo = async (newTodo) => {
-    const response = await axios.post("/todos", { newTodo });
-    setTodos(response.data).catch((err) => console.log(err));
+  const addTodo = (dia, description) => {
+    axios
+      .post("/todos", { dia, description })
+      .then((res) => {
+        console.log("res", res);
+      })
+      .catch((err) => console.log(err));
   };
+
   const deleteNote = (id) => {
     axios
       .delete(`/todos/${id}`)

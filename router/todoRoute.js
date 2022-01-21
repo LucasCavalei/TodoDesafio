@@ -17,12 +17,14 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { date, description } = req.body;
+  const { dia, description } = req.body;
   try {
-    const todo = await Todo.create({ date, description });
-    res.json(todo);
-  } catch (error) {
-    res.status(400).send({ error: "falha ao cadastrar" });
+    const newTodo = await Todo.create(dia, description);
+    res.json(newTodo);
+    console.log(newTodo);
+  } catch (err) {
+    console.log(err);
+    res.send("Error").status(400);
   }
 });
 
@@ -32,6 +34,9 @@ router.put("/:id", async (req, res) => {
       $set: req.body,
     });
     res.json(oldlist);
+    {
+      console.log(res);
+    }
   } catch (err) {
     res.send({ message: "Nao encontrado", err }).status(404);
   }

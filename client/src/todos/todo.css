@@ -5,8 +5,8 @@
   background-color: #90caf9;
   padding: 20px;
   margin: 25px;
-  border: 1px solid whitesmoke;
   gap: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
 }
 
 .item-todo {
@@ -34,17 +34,18 @@
 }
 .item-edit {
   justify-items: auto;
-  background-color: greenyellow;
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   padding: 5px;
   text-align: center;
+  background-color: rgba(243, 98, 190, 0.788);
 }
 .list-wrapper {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.icons {
+.icon {
   cursor: pointer;
+  margin-top: 50px;
 }

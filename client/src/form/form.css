@@ -1,6 +1,5 @@
 .form-wrapper {
   width: 100%;
-  display: flex;
   background-color: #90caf9;
   opacity: 0.8;
   flex-wrap: wrap;
@@ -8,24 +7,28 @@
   align-items: center;
 }
 .form-class {
+  display: flex;
   border: 1px solid black;
   margin-top: 20px;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   width: 40%;
+  min-width: 450px;
 }
 .select {
   border-radius: 4px;
   outline: none;
-  padding: 1px;
+  padding: 6px;
+  margin: 20px;
+  width: 100px;
   box-sizing: border-box;
 }
-input.description[type="text"] {
+.description {
   border: 2px solid #aaa;
   border-radius: 4px;
   outline: none;
-  padding: 5px;
+  padding: 15px;
   box-sizing: border-box;
 }
 input[type="text"]:focus {
@@ -35,7 +38,7 @@ input[type="text"]:focus {
 
 .btn {
   display: block;
-  margin: 40px 0;
+  margin: 20px 0;
   width: 160px;
   height: 60px;
   border: none;
