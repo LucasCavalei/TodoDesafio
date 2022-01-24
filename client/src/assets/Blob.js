@@ -1,4 +1,5 @@
 import React from "react";
+import "../form/form.css";
 
 const Blob = () => {
   // https://stackoverflow.com/questions/23402542/embedding-svg-into-reactjs
@@ -6,10 +7,10 @@ const Blob = () => {
     <div className="blob-class">
       <svg
         opacity={0.8}
-        viewBox=" 0 0 1400 500"
+        viewBox=" 0 0 500 500"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        width="100%"
+        width="150%"
         id="blobSvg"
       >
         <path
@@ -63,4 +64,5 @@ const Blob = () => {
     // </div>
   );
 };
+
 export default Blob;

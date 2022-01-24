@@ -11,7 +11,6 @@ const Form = ({ getData, addTodo }) => {
 
   return (
     <>
-      <Blob style={{ width: "40%", index: -1 }} />
       <form className="form-class">
         <h2>{dia}</h2>
         <label>Dia da semana</label>

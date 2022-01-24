@@ -9,6 +9,8 @@
 .form-class {
   display: flex;
   border: 1px solid black;
+  z-index: 2;
+
   margin-top: 20px;
   align-items: center;
   flex-wrap: wrap;
@@ -33,7 +35,7 @@
 }
 input[type="text"]:focus {
   border-color: dodgerBlue;
-  box-shadow: 0 0 0px dodgerblue;
+  box-shadaow: 0 0 0px dodgerblue;
 }
 
 .btn {
@@ -56,4 +58,13 @@ input[type="text"]:focus {
 }
 label {
   color: red;
+}
+.blob-class {
+  border: 1px solid black;
+  float: left;
+  left: 80px;
+  bottom: 40px;
+  position: absolute;
+}
+@keyframes identifier {
 }

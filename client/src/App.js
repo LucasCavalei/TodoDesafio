@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./header/Header";
+import Bg from "./assets/Bg";
 import Form from "./form/Form";
 import ItemTodo from "./todos/ItemTodo";
 import "./todos/todo.css";
@@ -60,6 +61,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      <Bg />
       <Form addTodo={addTodo} />
       <div className="todolist">
         {todos.map((todo, index) => (

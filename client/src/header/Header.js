@@ -1,5 +1,7 @@
 import React from "react";
 import Logo from "../assets/twosightLogo.png";
+import "./header.css";
+
 const Header = () => {
   return (
     <>
