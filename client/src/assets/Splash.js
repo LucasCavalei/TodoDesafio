@@ -1,6 +1,6 @@
 import React from "react";
 
-const Bg = () => {
+const Splash = () => {
   const bgStyle = {
     zIndex: 1,
     float: "left",
@@ -9,7 +9,7 @@ const Bg = () => {
     right: "-25px",
   };
   return (
-    <div className="bg" style={bgStyle}>
+    <div className="Splash" style={bgStyle}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -56,4 +56,4 @@ const Bg = () => {
     </div>
   );
 };
-export default Bg;
+export default Splash;
