@@ -6,7 +6,7 @@ import Splash from "./assets/Splash";
 import Form from "./form/Form";
 import ItemTodo from "./todos/ItemTodo";
 import "./todos/todo.css";
-import Footer from "./assets/Footer";
+import Footer from "./footer/Footer";
 
 const App = () => {
   const [todos, setTodos] = useState([]);

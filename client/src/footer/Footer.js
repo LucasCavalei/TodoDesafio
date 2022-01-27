@@ -1,12 +1,29 @@
-const Footer = () => {
-  const bgStyle = {
-    zIndex: 1,
-    float: "left",
-    position: "relative",
-  };
+import React from "react";
 
+import Facebook from "../assets/icons/Facebook";
+import Instagram from "../assets/icons/Instagram";
+import Twitter from "../assets/icons/Twitter";
+import Youtube from "../assets/icons/Youtube";
+import "./footer.css";
+
+const Footer = () => {
   return (
-    <div className="bg" style={bgStyle}>
+    <div className="Footer" style={footerStyle}>
+      <div className="Footer-description">
+        <h2> Quem somos</h2>
+        <h2>contato</h2>
+        <h2>whatever</h2>
+      </div>
+      <div className="Footer-socialMedia" style={socialMediaStyle}>
+        <Instagram />
+        <Youtube />
+        <Twitter />
+        <Facebook />
+        <div className="copyRight" style={{ marginLeft: "50px" }}>
+          <h4>Copyright © 2022 LucasCavaleiro. Todos os direitos reservados</h4>
+        </div>
+      </div>
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -108,5 +125,20 @@ const Footer = () => {
       </svg>
     </div>
   );
+};
+const footerStyle = {
+  zIndex: -1,
+  float: "left",
+  top: "200",
+  position: "absolute",
+};
+
+const socialMediaStyle = {
+  width: "40%",
+  height: "250px",
+  margin: "0 auto",
+  display: "flex",
+  top: "530px",
+  position: "relative",
 };
 export default Footer;

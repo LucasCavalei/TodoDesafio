@@ -1,0 +1,36 @@
+.Footer-description {
+  margin: 0 auto;
+  position: relative;
+  top: 510px;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 676px) {
+  .Footer-description {
+    width: 20%;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .Footer-socialMedia {
+    width: 20%;
+    flex-wrap: wrap;
+    position: relative;
+    left: 150px;
+  }
+  .copyRight {
+    position: relative;
+    left: -140px;
+  }
+}
+
+/* zIndex: 0,
+margin: "0 auto",
+border: "4px solid red",
+position: "relative",
+top: "510px",
+width: "40%",
+display: "flex",
+justifyContent: "space-between",
+}; */

@@ -5,7 +5,7 @@ const Splash = () => {
     zIndex: 1,
     float: "left",
     position: "absolute",
-    top: "-250px",
+    top: "-260px",
     right: "-25px",
   };
   return (

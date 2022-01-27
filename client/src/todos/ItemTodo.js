@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { FiEdit3 } from "react-icons/fi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
