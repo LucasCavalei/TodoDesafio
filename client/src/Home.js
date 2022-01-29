@@ -1,38 +1,19 @@
-import "./App.css";
+import "./Home";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Lottie from "react-lottie";
-import animaSocial from "./assets/lotties/animaSocial.json";
 import Header from "./header/Header";
 import Splash from "./assets/Splash";
-import animationData from "./assets/lotties/animaSocial.json";
-import building from "./assets/lotties/building.json";
-
-import favorite from "./assets/lotties/favorite.json";
 import Form from "./form/Form";
 import ItemTodo from "./todos/ItemTodo";
 import "./todos/todo.css";
 import Footer from "./footer/Footer";
 
-const App = () => {
+const Home = () => {
   const [todos, setTodos] = useState([]);
-  const [showLottie, setShowLottie] = useState(undefined);
-  const defaultOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: favorite,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
 
   useEffect(() => {
     getTodos();
   }, [todos]);
-
-  const myFunction = () => {
-    <div></div>;
-  };
 
   const getTodos = () => {
     axios
@@ -42,13 +23,12 @@ const App = () => {
       })
       .catch((err) => console.log(err));
   };
+
   const addTodo = (dia, description) => {
-    setShowLottie(undefined);
     axios
       .post("/todos", { dia, description })
       .then((res) => {
         console.log("res", res);
-        setShowLottie(true);
       })
       .catch((err) => console.log(err));
   };
@@ -80,22 +60,9 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="home">
       <Splash />
       <Header />
-      {showLottie ? (
-        <Lottie
-          options={defaultOptions}
-          style={{
-            border: "5px solid red",
-            zIndex: -2,
-            position: "absolute",
-            top: "150px",
-            height: 250,
-            width: 250,
-          }}
-        />
-      ) : null}
       <Form addTodo={addTodo} />
       <div className="todolist">
         {todos.map((todo, index) => (
@@ -112,4 +79,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;

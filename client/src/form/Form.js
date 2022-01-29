@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./form.css";
-import Blob from "../assets/Blob";
 const Form = ({ getData, addTodo }) => {
   const [dia, setDia] = useState("");
   const [description, setDescription] = useState("");
