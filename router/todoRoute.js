@@ -41,10 +41,15 @@ router.put("/:id", async (req, res) => {
     console.log(err);
   }
 });
-// Todo.findById(id, (err, todo) => {
-//     res.json(todo);
-// });
-// });
+router.get("/:id", async (req, res) => {
+  try {
+    const oneItem = await Todo.findById(req.params.id);
+    res.json(oneItem);
+  } catch (err) {
+    res.send("Nao encontrado").status(404);
+  }
+});
+
 router.delete("/:id", async (req, res) => {
   try {
     const oldlist = await Todo.findByIdAndDelete(req.params.id);

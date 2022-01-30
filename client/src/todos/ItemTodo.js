@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiEdit3 } from "react-icons/fi";
 import { RiDeleteBin5Line } from "react-icons/ri";
-
+import axios from "axios";
 import "./todo.css";
 
 const ItemTodo = ({ todo, deleteNote, editTodo }) => {
@@ -12,6 +12,17 @@ const ItemTodo = ({ todo, deleteNote, editTodo }) => {
   function callEditTodo(id) {
     editTodo({ dia, description, id });
   }
+  const myFunc = (id) => {
+    setOnUpdate(!onUpdate);
+    axios
+      .get(`/todos/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setDescription(res.data.description);
+        setDia(res.data.dia);
+      })
+      .catch((err) => console.log("sou nova myFcun get", err));
+  };
 
   return (
     <>
@@ -27,7 +38,7 @@ const ItemTodo = ({ todo, deleteNote, editTodo }) => {
           <FiEdit3
             className="icon edit"
             style={{ color: "white", marginLeft: "30px" }}
-            onClick={() => setOnUpdate(!onUpdate)}
+            onClick={() => myFunc(todo._id)}
           />
         </div>
       ) : (
@@ -36,12 +47,14 @@ const ItemTodo = ({ todo, deleteNote, editTodo }) => {
           <input
             type="text"
             name="title"
+            value={dia}
             onChange={(e) => setDia(e.target.value)}
           />
           <h5>descricao</h5>
           <input
             type="text"
             name="description"
+            value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
           <FiEdit3
@@ -49,6 +62,7 @@ const ItemTodo = ({ todo, deleteNote, editTodo }) => {
             className="delete-icon"
             onClick={() => callEditTodo(todo._id)}
           />
+          <button onClick={() => myFunc(todo._id)}>testeMy</button>
           <button className="edit-icon" onClick={() => setOnUpdate(!onUpdate)}>
             Cancelar update
           </button>

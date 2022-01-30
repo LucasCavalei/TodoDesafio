@@ -2,11 +2,8 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Lottie from "react-lottie";
-import animaSocial from "./assets/lotties/animaSocial.json";
 import Header from "./header/Header";
 import Splash from "./assets/Splash";
-import animationData from "./assets/lotties/animaSocial.json";
-import building from "./assets/lotties/building.json";
 
 import favorite from "./assets/lotties/favorite.json";
 import Form from "./form/Form";
@@ -29,10 +26,6 @@ const App = () => {
   useEffect(() => {
     getTodos();
   }, [todos]);
-
-  const myFunction = () => {
-    <div></div>;
-  };
 
   const getTodos = () => {
     axios
@@ -87,7 +80,6 @@ const App = () => {
         <Lottie
           options={defaultOptions}
           style={{
-            border: "5px solid red",
             zIndex: -2,
             position: "absolute",
             top: "150px",
