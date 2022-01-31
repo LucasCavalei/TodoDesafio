@@ -6,6 +6,7 @@ import Header from "./header/Header";
 import Splash from "./assets/Splash";
 
 import favorite from "./assets/lotties/favorite.json";
+import Loading from "./assets/lotties/loading.json";
 import Form from "./form/Form";
 import ItemTodo from "./todos/ItemTodo";
 import "./todos/todo.css";
@@ -14,6 +15,8 @@ import Footer from "./footer/Footer";
 const App = () => {
   const [todos, setTodos] = useState([]);
   const [showLottie, setShowLottie] = useState(undefined);
+  const [loading, setLoading] = useState(undefined);
+
   const defaultOptions = {
     loop: false,
     autoplay: true,
@@ -22,10 +25,26 @@ const App = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+  const defaultOptions2 = {
+    loop: false,
+    autoplay: true,
+    animationData: Loading,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   useEffect(() => {
     getTodos();
   }, [todos]);
+
+  const callLotties = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setShowLottie(true);
+    }, 1000);
+  };
 
   const getTodos = () => {
     axios
@@ -37,11 +56,13 @@ const App = () => {
   };
   const addTodo = (dia, description) => {
     setShowLottie(undefined);
+
     axios
       .post("/todos", { dia, description })
       .then((res) => {
         setTodos([...todos, res.data]);
-        setShowLottie(true);
+
+        callLotties();
       })
       .catch((err) => console.log(err));
   };
@@ -76,6 +97,18 @@ const App = () => {
     <div className="App">
       <Splash />
       <Header />
+      {loading ? (
+        <Lottie
+          options={defaultOptions2}
+          style={{
+            zIndex: -2,
+            position: "absolute",
+            top: "150px",
+            height: 300,
+            width: 300,
+          }}
+        />
+      ) : null}
       {showLottie ? (
         <Lottie
           options={defaultOptions}

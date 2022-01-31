@@ -9,9 +9,9 @@ const ItemTodo = ({ todo, deleteNote, editTodo }) => {
   const [dia, setDia] = useState();
   const [description, setDescription] = useState("");
 
-  function callEditTodo(id) {
-    editTodo({ dia, description, id });
-  }
+  // function callEditTodo(id) {
+  //   editTodo({ dia, description, id });
+  // }
   const myFunc = (id) => {
     setOnUpdate(!onUpdate);
     axios
