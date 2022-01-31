@@ -42,30 +42,46 @@ const ItemTodo = ({ todo, deleteNote, editTodo }) => {
           />
         </div>
       ) : (
-        <div className="item-edit">
-          <h5>Titulo</h5>
-          <input
-            type="text"
-            name="title"
-            value={dia}
-            onChange={(e) => setDia(e.target.value)}
-          />
-          <h5>descricao</h5>
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <FiEdit3
+        <div className="edit-form">
+          <div className="edit-dia">
+            <h5>Dia</h5>
+            <input
+              style={{ position: "relative", top: "-20px" }}
+              type="text"
+              name="title"
+              value={dia}
+              onChange={(e) => setDia(e.target.value)}
+            />
+          </div>
+          <div
+            className="edit-tarefa"
+            style={{ position: "relative", top: "-35px" }}
+          >
+            <h5>Tarefa</h5>
+            <input
+              type="text"
+              name="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </div>
+          {/* <div 
             className="icon edit"
             className="delete-icon"
             onClick={() => callEditTodo(todo._id)}
-          />
-          <button onClick={() => myFunc(todo._id)}>testeMy</button>
-          <button className="edit-icon" onClick={() => setOnUpdate(!onUpdate)}>
-            Cancelar update
-          </button>
+          /> */}
+          <div
+            className="edit-button"
+            style={{ position: "relative", top: "-55px" }}
+          >
+            <button onClick={() => myFunc(todo._id)}>Pronto</button>
+            <button
+              className="edit-icon"
+              onClick={() => setOnUpdate(!onUpdate)}
+            >
+              Cancelar edição
+            </button>
+          </div>
         </div>
       )}
     </>

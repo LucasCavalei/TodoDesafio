@@ -40,7 +40,7 @@ const App = () => {
     axios
       .post("/todos", { dia, description })
       .then((res) => {
-        console.log("res", res);
+        setTodos([...todos, res.data]);
         setShowLottie(true);
       })
       .catch((err) => console.log(err));
@@ -83,8 +83,8 @@ const App = () => {
             zIndex: -2,
             position: "absolute",
             top: "150px",
-            height: 250,
-            width: 250,
+            height: 300,
+            width: 300,
           }}
         />
       ) : null}

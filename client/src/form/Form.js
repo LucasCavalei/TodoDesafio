@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./form.css";
 const Form = ({ getData, addTodo }) => {
-  const [dia, setDia] = useState("");
+  const [dia, setDia] = useState(undefined);
   const [description, setDescription] = useState("");
 
   const createNote = () => {
@@ -26,7 +26,7 @@ const Form = ({ getData, addTodo }) => {
           <option value="sabado">Sabado</option>
           <option value="domingo">Domingo</option>
         </select>
-        <label>descrição</label>
+        <label>Tarefa</label>
         <input
           className="description"
           type="text"

@@ -33,14 +33,30 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.item-edit {
+.edit-form {
   justify-items: auto;
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-radius: 10px;
+  height: 172px;
+  width: 310px;
+  position: relative;
+  left: -1px;
   padding: 5px;
   text-align: center;
   background-color: rgba(245, 100, 192, 0.788);
 }
+.edit-tarefa input {
+  position: relative;
+  top: -20px;
+  width: 80%;
+  height: 25px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  text-align: center;
+}
+
 .list-wrapper {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
